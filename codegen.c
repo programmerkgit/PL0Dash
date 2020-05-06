@@ -213,7 +213,7 @@ void execute()            /*　目的コード（命令語）の実行　*/
     do {
         i = code[pc++];            /*　これから実行する命令語　*/
         switch (i.opCode) {
-            case lit:
+            case lit: /* literal */
                 stack[top++] = i.u.value;
                 break;
             case lod:
@@ -239,7 +239,7 @@ void execute()            /*　目的コード（命令語）の実行　*/
                 top -= i.u.addr.addr;        /*　実引数の分だけトップを戻す　*/
                 stack[top++] = temp;        /*　返す値をスタックのトップへ　*/
                 break;
-            case ict:
+            case ict: /* increment */
                 top += i.u.value;
                 if (top >= MAXMEM - MAXREG)
                     errorF("stack overflow");
@@ -247,7 +247,7 @@ void execute()            /*　目的コード（命令語）の実行　*/
             case jmp:
                 pc = i.u.value;
                 break;
-            case jpc:
+            case jpc: /* jump on condition */
                 if (stack[--top] == 0)
                     pc = i.u.value;
                 break;
