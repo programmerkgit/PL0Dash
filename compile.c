@@ -70,7 +70,8 @@ void block(int pIndex)        /*　pIndex はこのブロックの関数名の�
         break;
     }
     backPatch(backP);            /*　内部関数を飛び越す命令にパッチ　*/
-    changeV(pIndex, nextCodeIndex());    /*　この関数の開始番地を修正　*/
+    /*  */
+    changeV(pIndex, nextCodeIndex());    /*　この関数の開始番地を修正 なくても動く　*/
     genCodeV(ict, frameL());        /*　このブロックの実行時の必要記憶域をとる命令　*/
     statement();                /*　このブロックの主文　*/
     genCodeR();                /*　リターン命令　*/

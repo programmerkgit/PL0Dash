@@ -5,23 +5,26 @@
 \def\delete#1{$\fboxrule=.5mm\fbox{#1}$}
 \rm
 \ \par
-\ \par
-{\bf function}\ {\it fact}$(${\sl n}$)$\ \par
-{\bf begin}\ \par
-\ \ {\bf if}\ {\sl n}\ $=$\ 1\ {\bf then}\ {\bf return}\ 1\ \insert{$;$}\ \par
-\ \ {\bf return}\ {\sl n}$*${\it fact}$(${\sl n}$-$1$)$$;$\ \par
-{\bf end}$;$\ \par
-\ \par
-{\bf var}\ x$;$\ \par
-{\bf begin}\ \par
-\ \ x\ $:=$\ 1$;$\ \par
-\ \par
-\ \ {\bf while}\ x$<$10\ {\bf do}\ \par
+{\bf function}\ {\it fibonacci}$(${\sl n}$)$\ \par
 \ \ \ \ {\bf begin}\ \par
-\ \ \ \ \ \ {\bf write}\ x$;$\ \par
-\ \ \ \ \ \ {\bf write}\ {\it fact}$($x$)$$;$\ \par
-\ \ \ \ \ \ {\bf writeln}$;$\ \par
-\ \ \ \ \ \ x\ $:=$\ x$+$1$;$\ \par
-\ \ \ \ {\bf end}$;$\ \par
+\ \ \ \ \ \ \ \ {\bf if}\ {\sl n}\ $=$\ 0\ {\bf then}\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ {\bf begin}\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\bf return}\ 0$;$\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ {\bf end}$;$\ \par
+\ \ \ \ \ \ \ \ {\bf if}\ {\sl n}\ $=$\ 1\ {\bf then}\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ {\bf begin}\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\bf return}\ 1$;$\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ {\bf end}$;$\ \par
+\ \ \ \ \ \ \ \ {\bf return}\ {\it fibonacci}$(${\sl n}\ $-$1$)$\ $+$\ {\it fibonacci}$(${\sl n}\ $-$\ 2$)$$;$\ \par
+\ \ \ \ {\bf end}\ \insert{$;$}\ \par
+{\bf var}\ i$;$\ \par
+{\bf begin}\ \par
+\ \ \ \ i\ $:=$\ 0$;$\ \par
+\ \ \ \ {\bf while}\ i\ $<$\ 10\ {\bf do}\ \par
+\ \ \ \ \ \ \ \ {\bf begin}\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ {\bf write}\ {\it fibonacci}$($i$)$$;$\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ {\bf writeln}$;$\ \par
+\ \ \ \ \ \ \ \ \ \ \ \ i\ $:=$\ i\ $+$\ 1$;$\ \par
+\ \ \ \ \ \ \ \ {\bf end}\ \par
 {\bf end}$.$
 \end{document}

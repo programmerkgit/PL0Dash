@@ -30,7 +30,9 @@ typedef struct tableE {        /*　名前表のエントリーの型　*/
 static TabelE nameTable[MAXTABLE];        /*　名前表　*/
 static int tIndex = 0;            /*　名前表のインデックス　*/
 static int level = -1;            /*　現在のブロックレベル　*/
+/* index is  */
 static int index[MAXLEVEL];    /*　index[i]にはブロックレベルiの最後のインデックス　*/
+/* addr is  */
 static int addr[MAXLEVEL];        /*　addr[i]にはブロックレベルiの最後の変数の番地　*/
 static int localAddr;            /*　現在のブロックの最後の変数の番地　*/
 static int tfIndex;
@@ -78,6 +80,7 @@ int bLevel()                /*　現ブロックのレベルを返す　*/
     return level;
 }
 
+/* ??? */
 int fPars()                    /*　現ブロックの関数のパラメタ数を返す　*/
 {
     return nameTable[index[level - 1]].u.f.pars;

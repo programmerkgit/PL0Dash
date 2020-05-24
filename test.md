@@ -1,19 +1,22 @@
-
-function fact(n)
-begin
-  if n = 1 then return 1
-  return n*fact(n-1);
-end;
-
-var x;
-begin
-  x := 1;
-
-  while x<10 do
+function fibonacci(n)  
     begin
-      write x; 
-      write fact(x);
-      writeln;
-      x := x+1;
-    end;
+        if n = 0 then
+            begin
+                return 0;
+            end;
+        if n = 1 then
+            begin
+                 return 1;
+            end;
+        return fibonacci(n -1) + fibonacci(n - 2); 
+    end
+var i;
+begin
+    i := 0;
+    while i < 10 do  
+        begin
+            write fibonacci(i);
+            writeln;
+            i := i + 1;
+        end    
 end.

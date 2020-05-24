@@ -1,0 +1,28 @@
+
+function fact(n)
+function f(l)
+  var x, y;
+  begin
+    x := 10
+    y := 29
+  end;
+begin
+  if n = 1 then return 1
+  return n*fact(n-1);
+end;
+
+var x;
+var y;
+var z;
+begin
+  x := 1;
+  y := 2;
+  z := 3;
+  while x<10 do
+    begin
+      write x; 
+      write fact(x);
+      writeln;
+      x := x+1;
+    end;
+end.

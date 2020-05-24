@@ -6,16 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/Users/admin/CLionProjects/PL0Dash/codegen.c
-stdio.h
--
-codegen.h
 /Users/admin/CLionProjects/PL0Dash/codegen.h
-table.h
-/Users/admin/CLionProjects/PL0Dash/table.h
+
+/Users/admin/CLionProjects/PL0Dash/compile.c
 getSource.h
 /Users/admin/CLionProjects/PL0Dash/getSource.h
-
+table.h
+/Users/admin/CLionProjects/PL0Dash/table.h
+codegen.h
 /Users/admin/CLionProjects/PL0Dash/codegen.h
 
 /Users/admin/CLionProjects/PL0Dash/getSource.h

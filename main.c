@@ -8,9 +8,9 @@
 
 
 int main() {
-    char fileName[140];        /*　ソースプログラムファイルの名前　*/
+    char fileName[140] = "/Users/admin/CLionProjects/PL0Dash/test.md";        /*　ソースプログラムファイルの名前　*/
     printf("enter source file name\n");
-    scanf("%s", fileName);
+    // scanf("%s", fileName);
 
     char objectFileName[140];
     strcpy(objectFileName, fileName);

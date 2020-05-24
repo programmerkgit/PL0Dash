@@ -236,6 +236,7 @@ void execute()            /*　目的コード（命令語）の実行　*/
                 top = display[i.u.addr.level];    /*　topを呼ばれたときの値に戻す　*/
                 display[i.u.addr.level] = stack[top];        /* 壊したディスプレイの回復 */
                 pc = stack[top + 1];
+                /* 引数の個数分、stackを破棄する */
                 top -= i.u.addr.addr;        /*　実引数の分だけトップを戻す　*/
                 stack[top++] = temp;        /*　返す値をスタックのトップへ　*/
                 break;
