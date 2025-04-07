@@ -5,6 +5,8 @@
 #include <string.h>
 #include "getSource.h"
 
+#include <stdlib.h>
+
 #define MAXLINE 120        /*　１行の最大文字数　*/
 #define MAXERROR 30        /*　これ以上のエラーがあったら終り　*/
 #define MAXNUM  14        /*　定数の最大桁数　*/

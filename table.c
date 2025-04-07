@@ -8,6 +8,8 @@
 
 #endif
 
+#include <string.h>
+
 #include "getSource.h"
 
 #define MAXTABLE 100        /*　名前表の最大長さ　*/
@@ -31,7 +33,7 @@ static TabelE nameTable[MAXTABLE];        /*　名前表　*/
 static int tIndex = 0;            /*　名前表のインデックス　*/
 static int level = -1;            /*　現在のブロックレベル　*/
 /* index is  */
-static int index[MAXLEVEL];    /*　index[i]にはブロックレベルiの最後のインデックス　*/
+static int indx[MAXLEVEL];    /*　index[i]にはブロックレベルiの最後のインデックス　*/
 /* addr is  */
 static int addr[MAXLEVEL];        /*　addr[i]にはブロックレベルiの最後の変数の番地　*/
 static int localAddr;            /*　現在のブロックの最後の変数の番地　*/
@@ -61,7 +63,7 @@ void blockBegin(int firstAddr)    /*　ブロックの始まり(最初の変数�
     }
     if (level == MAXLEVEL - 1)
         errorF("too many nested blocks");
-    index[level] = tIndex;        /*　今までのブロックの情報を格納　*/
+    indx[level] = tIndex;        /*　今までのブロックの情報を格納　*/
     addr[level] = localAddr;
     localAddr = firstAddr;        /*　新しいブロックの最初の変数の番地　*/
     level++;                /*　新しいブロックのレベル　*/
@@ -71,7 +73,7 @@ void blockBegin(int firstAddr)    /*　ブロックの始まり(最初の変数�
 void blockEnd()                /*　ブロックの終りで呼ばれる　*/
 {
     level--;
-    tIndex = index[level];        /*　一つ外側のブロックの情報を回復　*/
+    tIndex = indx[level];        /*　一つ外側のブロックの情報を回復　*/
     localAddr = addr[level];
 }
 
@@ -83,7 +85,7 @@ int bLevel()                /*　現ブロックのレベルを返す　*/
 /* ??? */
 int fPars()                    /*　現ブロックの関数のパラメタ数を返す　*/
 {
-    return nameTable[index[level - 1]].u.f.pars;
+    return nameTable[indx[level - 1]].u.f.pars;
 }
 
 void enterT(char *id)            /*　名前表に名前を登録　*/
